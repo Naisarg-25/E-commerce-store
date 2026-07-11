@@ -1,4 +1,4 @@
-const API = "http://localhost:3000";
+const API = "https://e-commerse-store-6lm5.onrender.com";
 
 const signupForm = document.getElementById('signupForm');
 const signupName = document.getElementById('signupName');

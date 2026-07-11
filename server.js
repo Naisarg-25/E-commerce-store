@@ -4,16 +4,17 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
+require('dotenv').config();
 
 const app = express();
-const SECRET = process.env.JWT_SECRET || 'mysecretkey';
+const SECRET = process.env.JWT_SECRET ;
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 app.use(express.static(__dirname));
 
-mongoose.connect('mongodb://127.0.0.1:27017/shopdb')
+mongoose.connect(process.env.MONGO_URI)
 .then(() => console.log("databse connected"))
 .catch(err => console.log(err));
 
